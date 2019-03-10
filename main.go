@@ -76,7 +76,7 @@ func writeStructs(schemas []ColumnSchema) (int, error) {
 		}
 		out = out + "\t" + formatName(cs.ColumnName) + " " + goType
 		if len(config.TagLabel) > 0 {
-			out = out + "\t`" + config.TagLabel + ":\"" + cs.ColumnName + "\"`"
+			out = out + "\t`" + config.TagLabel + ":\"" + cs.ColumnName + "\"" + " json" + ":\"" + cs.ColumnName + "\"`"
 		}
 		out = out + "\n"
 		currentTable = cs.TableName
